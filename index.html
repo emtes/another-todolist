@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-  <h1>Todo List</h1>
 
-<form method="#" id="addTodo">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
+        <title>Todo List</title>
+    </head>
 
-  <label for="task_desc">Task</label>
-  <input type="text" id="task_desc" name="desc">
+    <body>
+        <h1>Todo List</h1>
 
-  <label for="task_desc">Due Date</label>
-  <input type="datetime-local" id="task_date" name="desc">
+        <form method="#" id="addTodo">
 
-  <input type="submit" value="Add Task">
+            <label for="task_desc">Task</label>
+            <input type="text" id="task_desc" name="desc">
 
-</form>
+            <label for="task_desc">Due Date</label>
+            <input type="datetime-local" id="task_date" name="desc">
 
-<h2>Inbox</h2>
-<table id="todoInbox">
-  <thead>
-    <th>Tasks</th>
-    <th>Due Date</th>
-    <th>Complete:</th>
-    <th></th>
-  </thead>
-  <tbody>
+            <input type="submit" value="Add Task">
 
-  </tbody>
-</table>
+        </form>
+
+        <h2>Inbox</h2>
+        <table>
+            <thead>
+                <th>Tasks</th>
+                <th>Due Date</th>
+                <th>Complete:</th>
+                <th></th>
+            </thead>
+            <tbody id="todoInbox">
+
+            </tbody>
+        </table>
 
 
 
 
-<script type="text/javascript" src="Todo.js"></script>
-<script type="text/javascript" src="TodoList.js"></script>
-</body>
+        <script type="text/javascript" src="Todo.js"></script>
+        <script type="text/javascript" src="TodoList.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+
 </html>
