@@ -1,4 +1,5 @@
 const list = new TodoList()
+const ui = new UI()
 const form = document.getElementById('addTodo');
 
 form.addEventListener('submit', (e) => {
@@ -9,18 +10,18 @@ form.addEventListener('submit', (e) => {
     const dueDate = document.getElementById('task_date');
     list.addTask(taskDesc.value, dueDate.value);
 
-    // Create a row and add it to table
-    const todoInbox = document.getElementById('todoInbox');
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-    <td>${taskDesc.value}</td>
-    <td>${dueDate.value}</td>
-    <td>Complete</td>
-    <td>Delete</td>
-    `;
-    todoInbox.appendChild(tr);
+    // Create table from updated task list data
+    ui.clearTable();
+    ui.paintTable();
 
     // Clear 'Task' and 'Due Date' inputs
-    taskDesc.value = '';
-    dueDate.value = '';
+    ui.clearInputs();
 });
+
+const deleteForms = document.getElementsByClassName('deleteForm');
+for (const button of deleteForms) {
+    button.addEventListener('submit', (e) => {
+        e.preventDefault();
+        list.deleteTask(deleteForms[0].id);
+    });
+}
